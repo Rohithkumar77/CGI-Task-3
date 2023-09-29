@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHOPLANE - A Place For Shopping</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <section id="product">
+    <div class="left-column">
+      <img id="productImg" src="./img/placeholder.jpg" alt="" />
+    </div>
+    <div class="right-column">
+      <div class="product-description">
+        <h1 id="name">Product Name</h1>
+        <h4 id="brand">Product Brand</h4>
+        <h3>Price: Rs <span id="price"></span></h3>
+        <div class="description">
+          <h3>Description</h3>
+          <p id="description">Product Description</p>
+        </div>
+        <div class="product-preview">
+          <h3>Product Preview</h3>
+          <div class="previewImg">
+            <img id="img0" class="active" src="./img/placeholder.jpg" alt="" />
+            <img id="img1" src="" alt="" />
+            <img id="img2" src="" alt="" />
+            <img id="img3" src="" alt="" />
+            <img id="img4" src="" alt="" />
+            <img id="img5" src="" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="btn">
+        <button id="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script>
+    const productData = {
+      "id": "1",
+      "name": "Men Navy Blue Solid Sweatshirt",
+      "preview": "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/08a7b230-ee8f-46c0-a945-4e835a3c01c01541402833619-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-1.jpg",
+      "photos": ["https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/08a7b230-ee8f-46c0-a945-4e835a3c01c01541402833619-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-1.jpg",
+        "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/efc3d5b9-1bb3-4427-af53-7acae7af98951541402833591-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-2.jpg",
+        "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/c7e58861-3431-4189-9903-9880f5eebd181541402833566-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-3.jpg",
+        "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/66490b64-32de-44b4-a6e4-fe36f1c040051541402833548-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-4.jpg",
+        "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/957be784-7c5d-4e90-ab9f-0928015b22891541402833645-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-5.jpg"
+      ],
+      "description": "Navy solid sweatshirt with patchwork, has a round neck, long sleeves, straight hem",
+      "size": [
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "isAccessory": false,
+      "brand": "United Colors of Benetton",
+      "price": 2599
+    };
+    const nameElement = document.getElementById("name");
+    const brandElement = document.getElementById("brand");
+    const priceElement = document.getElementById("price");
+    const descriptionElement = document.getElementById("description");
+    const productImgElement = document.getElementById("productImg");
+    const previewImgElements = document.querySelectorAll(".previewImg img");
+
+    nameElement.textContent = productData.name;
+    brandElement.textContent = productData.brand;
+    priceElement.textContent = `Price: Rs ${productData.price}`;
+    descriptionElement.textContent = productData.description;
+    productImgElement.src = productData.preview;
+
+    for (let i = 0; i < productData.photos.length && i < previewImgElements.length; i++) {
+      previewImgElements[i].src = productData.photos[i];
+    }
+    const addToCartButton = document.getElementById("add-to-cart");
+    addToCartButton.addEventListener("click", function () {
+    });
+    previewImgElements.forEach((previewImg, index) => {
+      previewImg.addEventListener("click", function () {
+        productImgElement.src = productData.photos[index];
+        previewImgElements.forEach((img) => {
+          img.classList.remove("active");
+        });
+        previewImg.classList.add("active");
+      });
+    });
+
+
+  </script>
+</body>
+
+</html>
