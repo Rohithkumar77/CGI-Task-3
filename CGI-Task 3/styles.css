@@ -1,0 +1,92 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #54c3ef;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #54c3ef;
+    padding: 20px;
+    width: 50%;
+}
+
+.heading {
+    font-family: 'Caveat Brush Cursive', cursive;
+    color: #fad744;
+}
+
+.quiz-container {
+    justify-content: space-between;
+    background-color:#2b3252;
+    color: #fad744;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    height: fit-content;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.question-container {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #fad744;
+    margin-bottom: 10px;
+    
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#submit-button {
+    background-color: #fad744;
+    color: #2b3252;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.score-container {
+    background-color:#fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    position: sticky;
+    top: 120px;
+    height: max-content;
+}
+.question-div {
+    border-bottom: 1px solid #fad744;
+    padding-bottom: 20px;
+}
+
+
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #2b3252;
+    color: #fad744;
+    border-radius: 5px;
+    width: 80%;
+    height: fit-content;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#submit-button {
+    margin-top: 20px; /* Add margin to the top */
+    background-color: #fad744;
+    color: #2b3252;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    align-self: center; /* Center the button horizontally within the container */
+}
